@@ -7,9 +7,11 @@ export const Button = styled.button`
   color: ${({ theme }) => theme.colors.primary};
   cursor: pointer;
   font-weight: 700;
-  font-family: 'Noto Serif', serif;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 1em;
   padding: 0.5em;
   margin: 0 0.5em;
+  transition: 0.25s ease all;
 
   &:hover {
     background: ${({ theme }) => theme.colors.primary};
