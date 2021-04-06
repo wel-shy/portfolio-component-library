@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ITheme } from "../../theme/theme";
+import { ITheme } from "../../../theme/theme";
 
 export const H2 = styled.h2`
   color: ${({ theme }) => (theme as ITheme).colors.text};

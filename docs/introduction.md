@@ -1,5 +1,5 @@
-# Portfolio Component Library
-A component library for consitent portfolio websites.
+Component library for portfolio websites. These can be added to your React project
+and inserted where needed. Components are created with `styled-components`.
 
 ## Getting Started
 ### Installation
@@ -25,14 +25,4 @@ For fonts to work, please add this to your head tag:
 ### Setup
 To begin using the components you must first wrap your project in the
 `ThemeProvider` component, it requires a `theme`, that extends the
-`ITheme` interface. For example:
-
-```jsx
-import {LightTheme, ThemeProvider} from "@wel-shy/portfolio-component-library";
-
-export default () => (
-  <ThemeProvider theme={LightTheme}>
-    <h1>Hello World!</h1>
-  </ThemeProvider>
-);
-```
+`ITheme` interface.
