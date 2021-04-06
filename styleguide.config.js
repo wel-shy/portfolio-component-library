@@ -4,4 +4,5 @@ module.exports = {
   styleguideComponents: {
     Wrapper: path.join(__dirname, 'src/components/ThemeProvider/ThemeProvider')
   },
+  assetsDir: "src/resources"
 }

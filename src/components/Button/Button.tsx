@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ITheme } from "../../theme/theme";
 
 export const Button = styled.button`
   background: transparent;
@@ -7,7 +8,7 @@ export const Button = styled.button`
   color: ${({ theme }) => theme.colors.primary};
   cursor: pointer;
   font-weight: 700;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: ${({theme}) => (theme as ITheme).font.sans};
   font-size: 1em;
   padding: 0.5em;
   margin: 0 0.5em;

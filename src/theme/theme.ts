@@ -28,6 +28,10 @@ export interface ITheme {
       mobile: number,
     },
   },
+  font: {
+    serif: string;
+    sans: string;
+  }
 }
 
 const BaseTheme = {
@@ -63,5 +67,9 @@ export const LightTheme: ITheme = {
     white: "#F3F3F4",
     text: "#011C27",
     textAccent: "#A3BAC3"
+  },
+  font: {
+    serif: "'Noto Serif', serif",
+    sans: "'Noto Sans', sans-serif"
   }
 }
