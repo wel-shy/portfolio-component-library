@@ -8,4 +8,4 @@ export { H2 } from "./src/components/Atoms/H2/H2";
 export { Paragraph } from "./src/components/Atoms/Paragraph/Paragraph";
 
 export { ThemeProvider } from "./src/components/Molecules/ThemeProvider/ThemeProvider"
-export { TitleCard } from "./src/components/Molecules/TitleCard/TitleCard";
+export { TitleWithImage } from "./src/components/Molecules/TitleWithImage/TitleWithImage";

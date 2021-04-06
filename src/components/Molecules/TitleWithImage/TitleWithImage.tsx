@@ -5,7 +5,7 @@ import { ITheme } from "../../../theme/theme";
 import { H1 } from "../../Atoms/H1/H1"
 import { H2 } from "../../Atoms/H2/H2";
 
-interface TitleCardProps {
+interface TitleWithImageProps {
   image: JSX.Element;
   titleText: string;
   subtitleText: string;
@@ -57,7 +57,7 @@ const ContentWrapper = styled.div`
   justify-content: center;
 `;
 
-export const TitleCard = ({ image, titleText, subtitleText, children }: TitleCardProps) => {
+export const TitleWithImage = ({ image, titleText, subtitleText, children }: TitleWithImageProps) => {
   return (
     <TitleWrapper>
       <ImageWrapper>
