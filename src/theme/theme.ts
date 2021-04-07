@@ -75,7 +75,7 @@ export const LightTheme: ITheme = {
     grey: "#A3BAC3",
     white: "#F3F3F4",
     text: "#011C27",
-    textAccent: "#A3BAC3",
+    textAccent: "#1C6E8C",
     background: "#F3F3F4",
   },
 };
