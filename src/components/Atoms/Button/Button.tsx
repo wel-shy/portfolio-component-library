@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { ITheme } from "../../../theme/theme";
 
+/** @component */
 export const Button = styled.button`
   background: transparent;
   border: 1px solid ${({ theme }) => theme.colors.primary};

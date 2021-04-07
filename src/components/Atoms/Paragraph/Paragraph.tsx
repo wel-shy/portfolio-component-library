@@ -5,6 +5,7 @@ interface ParagraphProps {
   large?: boolean;
 }
 
+/** @component */
 export const Paragraph = styled.p<ParagraphProps>`
   font-size: ${({ theme, large }) =>
     large
