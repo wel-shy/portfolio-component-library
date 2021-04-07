@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { ITheme } from "../../../theme/theme";
 
-import { H1 } from "../../Atoms/H1/H1";
-import { H2 } from "../../Atoms/H2/H2";
+import { H1, H2 } from "../../Atoms/Headers";
 
 interface TitleWithImageProps {
   image: JSX.Element;
