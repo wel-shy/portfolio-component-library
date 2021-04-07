@@ -68,9 +68,9 @@ export const LightTheme: ITheme = {
   ...BaseTheme,
   colors: {
     primary: "#01A7C2",
-    info: "#03254E",
+    info: "#16697A",
     warning: "#F49D37",
-    danger: "#FFB100",
+    danger: "#BF211E",
     dark: "#011C27",
     grey: "#A3BAC3",
     white: "#F3F3F4",
