@@ -25,7 +25,7 @@ const Link = styled.a<{ active: boolean }>`
 
 interface NavItemProps {
   active?: boolean;
-  children: any;
+  children?: any;
   href: string;
 }
 

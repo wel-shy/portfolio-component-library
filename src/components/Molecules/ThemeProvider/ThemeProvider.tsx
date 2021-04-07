@@ -5,7 +5,7 @@ import { ITheme, LightTheme } from "../../../theme/theme";
 
 interface ThemeProviderProps {
   theme?: ITheme;
-  children: any;
+  children?: any;
 }
 
 export const ThemeProvider = ({

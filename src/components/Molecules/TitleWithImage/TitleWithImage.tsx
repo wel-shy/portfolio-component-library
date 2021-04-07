@@ -9,7 +9,7 @@ interface TitleWithImageProps {
   image: JSX.Element;
   titleText: string;
   subtitleText: string;
-  children: any;
+  children?: any;
 }
 
 const TitleWrapper = styled.div`
