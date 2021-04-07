@@ -15,5 +15,5 @@ interface CircleImageProps {
 }
 
 export const CircleImage = ({ src, alt, width }: CircleImageProps) => {
-  return (<Image src={src} alt={alt} width={width} height={ width}/>);
-}
+  return <Image src={src} alt={alt} width={width} height={width} />;
+};

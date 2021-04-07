@@ -2,20 +2,20 @@ import React from "react";
 import styled from "styled-components";
 import { ITheme } from "../../../theme/theme";
 
-import { H1 } from "../../Atoms/H1/H1"
+import { H1 } from "../../Atoms/H1/H1";
 import { H2 } from "../../Atoms/H2/H2";
 
 interface TitleWithImageProps {
   image: JSX.Element;
   titleText: string;
   subtitleText: string;
-  children: JSX.Element;
+  children: any;
 }
 
 const TitleWrapper = styled.div`
   display: flex;
 
-  @media (max-width: ${({theme}) => (theme as ITheme).sizes.screen.m}px) {
+  @media (max-width: ${({ theme }) => (theme as ITheme).sizes.screen.m}px) {
     display: block;
   }
 `;
@@ -47,7 +47,7 @@ const ImageWrapper = styled.div`
 
     img {
       margin: 0 auto;
-    }    
+    }
   }
 `;
 
@@ -57,21 +57,22 @@ const ContentWrapper = styled.div`
   justify-content: center;
 `;
 
-export const TitleWithImage = ({ image, titleText, subtitleText, children }: TitleWithImageProps) => {
+export const TitleWithImage = ({
+  image,
+  titleText,
+  subtitleText,
+  children,
+}: TitleWithImageProps) => {
   return (
     <TitleWrapper>
-      <ImageWrapper>
-        {image}
-      </ImageWrapper>
+      <ImageWrapper>{image}</ImageWrapper>
       <ContentWrapper>
         <TextWrapper>
-          <H1>{ titleText }</H1>
-          <H2>{ subtitleText }</H2>
+          <H1>{titleText}</H1>
+          <H2>{subtitleText}</H2>
         </TextWrapper>
-        <div>
-          {children}
-        </div>
+        <div>{children}</div>
       </ContentWrapper>
     </TitleWrapper>
   );
-}
+};

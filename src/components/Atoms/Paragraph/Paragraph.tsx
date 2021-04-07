@@ -6,6 +6,8 @@ interface ParagraphProps {
 }
 
 export const Paragraph = styled.p<ParagraphProps>`
-  font-size: ${({theme, large}) =>
-    large ? (theme as ITheme).sizes.text.paragraphLarge : (theme as ITheme).sizes.text.paragraph};
+  font-size: ${({ theme, large }) =>
+    large
+      ? (theme as ITheme).sizes.text.paragraphLarge
+      : (theme as ITheme).sizes.text.paragraph};
 `;

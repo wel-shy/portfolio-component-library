@@ -1,20 +1,23 @@
 import React from "react";
-import { ThemeProvider as StyledThemeProvider } from 'styled-components';
+import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { GlobalStyle } from "../../../theme/GlobalStyle";
-import { ITheme, LightTheme } from '../../../theme/theme';
+import { ITheme, LightTheme } from "../../../theme/theme";
 
 interface ThemeProviderProps {
   theme?: ITheme;
-  children: any
+  children: any;
 }
 
-export const ThemeProvider = ({theme = LightTheme, children}: ThemeProviderProps) => {
+export const ThemeProvider = ({
+  theme = LightTheme,
+  children,
+}: ThemeProviderProps) => {
   return (
     <StyledThemeProvider theme={theme}>
-      <GlobalStyle/>
-      { children }
+      <GlobalStyle />
+      {children}
     </StyledThemeProvider>
-  )
-}
+  );
+};
 
 export default ThemeProvider;

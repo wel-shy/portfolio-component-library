@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import styled, { useTheme } from "styled-components";
 
 import { ITheme } from "../../../theme/theme";
-import useWindowDimensions from '../../hooks/useWindowDimensions';
+import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 const Nav = styled.nav`
-  background: ${({theme}) => (theme as ITheme).colors.background};
+  background: ${({ theme }) => (theme as ITheme).colors.background};
 `;
 
 const BrandContainer = styled.div`
@@ -27,7 +27,7 @@ const IconContainer = styled.div`
 `;
 
 const SideMenu = styled.div`
-  background: ${({theme}) => (theme as ITheme).colors.background};
+  background: ${({ theme }) => (theme as ITheme).colors.background};
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -40,39 +40,51 @@ const NavContent = styled.div`
 
 interface NavigationBarProps {
   brand: JSX.Element;
-  rightGroup: JSX.Element[];
+  rightGroup?: JSX.Element[];
   closeIcon: JSX.Element;
   menuIcon: JSX.Element;
 }
 
-export const NavigationBar = ({ brand, rightGroup, closeIcon, menuIcon }: NavigationBarProps) => {
+export const NavigationBar = ({
+  brand,
+  rightGroup,
+  closeIcon,
+  menuIcon,
+}: NavigationBarProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { width } = useWindowDimensions();
   const theme = useTheme() as ITheme;
   const isCollapsed = width <= theme.sizes.screen.m;
 
+  const hasLinks = rightGroup && rightGroup.length;
+
+  const Icon = hasLinks ? (
+    <IconContainer>
+      {isOpen ? (
+        <div onClick={() => setIsOpen(false)}>{closeIcon}</div>
+      ) : (
+        <div onClick={() => setIsOpen(true)}>{menuIcon}</div>
+      )}
+    </IconContainer>
+  ) : (
+    <></>
+  );
+
   return (
     <Nav>
       <NavContent>
-        <BrandContainer>
-        { brand }
-        </BrandContainer>
+        <BrandContainer>{brand}</BrandContainer>
         {isCollapsed ? (
-          <IconContainer>
-            {isOpen ?
-              <div onClick={() => setIsOpen(false)}>{closeIcon}</div> :
-              <div onClick={() => setIsOpen(true)}>{menuIcon}</div>}
-          </IconContainer>) : (
-          <RightGroupContainer>
-            {rightGroup}
-        </RightGroupContainer>
-        ) }
+          Icon
+        ) : rightGroup && rightGroup.length ? (
+          <RightGroupContainer>{rightGroup}</RightGroupContainer>
+        ) : null}
       </NavContent>
-      { isOpen && (
+      {isOpen && (
         <SideMenu>
-          { rightGroup }
-        </SideMenu>)
-      }
+          {rightGroup && rightGroup.length ? rightGroup : <></>}
+        </SideMenu>
+      )}
     </Nav>
   );
-}
+};

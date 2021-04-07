@@ -10,37 +10,37 @@ export interface ITheme {
     text: string;
     textAccent: string;
     background: string;
-  },
+  };
   sizes: {
     screen: {
       s: number;
       m: number;
       l: number;
       xl: number;
-    },
+    };
     text: {
-      title: string,
-      titleMobile: string,
-      subtitle: string,
-      subtitleMobile: string,
-      paragraphLarge: string,
-      paragraph: string,
-    },
+      title: string;
+      titleMobile: string;
+      subtitle: string;
+      subtitleMobile: string;
+      paragraphLarge: string;
+      paragraph: string;
+    };
     columns: {
-      desktop: number,
-      mobile: number,
-    },
-  },
+      desktop: number;
+      mobile: number;
+    };
+  };
   font: {
     serif: string;
     sans: string;
-  }
+  };
 }
 
 const BaseTheme = {
   font: {
     serif: "'Noto Serif', serif",
-    sans: "'Noto Sans', sans-serif"
+    sans: "'Noto Sans', sans-serif",
   },
   sizes: {
     screen: {
@@ -62,7 +62,7 @@ const BaseTheme = {
       mobile: 2,
     },
   },
-}
+};
 
 export const LightTheme: ITheme = {
   ...BaseTheme,
@@ -76,6 +76,6 @@ export const LightTheme: ITheme = {
     white: "#F3F3F4",
     text: "#011C27",
     textAccent: "#A3BAC3",
-    background: "#F3F3F4"
-  }
-}
+    background: "#F3F3F4",
+  },
+};
