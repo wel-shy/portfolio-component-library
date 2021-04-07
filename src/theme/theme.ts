@@ -9,11 +9,14 @@ export interface ITheme {
     white: string;
     text: string;
     textAccent: string;
+    background: string;
   },
   sizes: {
     screen: {
-      desktop: string,
-      mobile: string,
+      s: number;
+      m: number;
+      l: number;
+      xl: number;
     },
     text: {
       title: string,
@@ -35,10 +38,16 @@ export interface ITheme {
 }
 
 const BaseTheme = {
+  font: {
+    serif: "'Noto Serif', serif",
+    sans: "'Noto Sans', sans-serif"
+  },
   sizes: {
     screen: {
-      desktop: "960px",
-      mobile: "680px",
+      s: 640,
+      m: 768,
+      l: 1024,
+      xl: 1200,
     },
     text: {
       title: "3em",
@@ -66,10 +75,7 @@ export const LightTheme: ITheme = {
     grey: "#A3BAC3",
     white: "#F3F3F4",
     text: "#011C27",
-    textAccent: "#A3BAC3"
-  },
-  font: {
-    serif: "'Noto Serif', serif",
-    sans: "'Noto Sans', sans-serif"
+    textAccent: "#A3BAC3",
+    background: "#F3F3F4"
   }
 }
