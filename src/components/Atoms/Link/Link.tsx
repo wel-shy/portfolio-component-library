@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { ITheme } from "../../../theme/theme";
 
+/** @component */
 export const Link = styled.a`
   color: ${({ theme }) => (theme as ITheme).colors.primary};
   text-decoration: none;

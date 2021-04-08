@@ -1,4 +1,4 @@
-Headers:
+Each level can be imported individually, not just the `H1` tag as stated.
 
 ```jsx
 import { H1, H2, H3, H4, H5, H6 } from "./";
