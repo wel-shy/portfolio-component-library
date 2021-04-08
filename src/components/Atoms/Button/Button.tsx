@@ -1,22 +1,19 @@
 import styled from "styled-components";
 import { ITheme } from "../../../theme/theme";
+import { ColorModifier } from "../../../types";
+import getColorModifierHexCode from "../../../utils/getColorModifierHexCode";
 interface ButtonProps {
-  buttonType?: "primary" | "info" | "warning" | "danger" | "dark";
+  buttonType?: ColorModifier;
 }
-
-const getColor = (
-  style: "primary" | "info" | "warning" | "danger" | "dark" = "primary",
-  theme: ITheme
-): string => {
-  return theme.colors[style];
-};
 
 /** @component */
 export const Button = styled.button<ButtonProps>`
   background: transparent;
-  border: 1px solid ${({ theme, buttonType }) => getColor(buttonType, theme)};
+  border: 1px solid
+    ${({ theme, buttonType }) => getColorModifierHexCode(buttonType, theme)};
   border-radius: 5px;
-  color: ${({ theme, buttonType }) => getColor(buttonType, theme)};
+  color: ${({ theme, buttonType }) =>
+    getColorModifierHexCode(buttonType, theme)};
   cursor: pointer;
   font-weight: 700;
   font-family: ${({ theme }) => (theme as ITheme).font.sans};
@@ -27,7 +24,8 @@ export const Button = styled.button<ButtonProps>`
   transition: 0.25s ease all;
 
   &:hover {
-    background: ${({ theme, buttonType }) => getColor(buttonType, theme)};
+    background: ${({ theme, buttonType }) =>
+      getColorModifierHexCode(buttonType, theme)};
     border: 1px solid ${({ theme }) => theme.colors.white};
     color: ${({ theme }) => theme.colors.white};
   }
