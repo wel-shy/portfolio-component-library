@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { ITheme } from "../../../theme/theme";
-
 import { H1, H2 } from "../../Atoms/Headers";
 
 interface TitleWithImageProps {
@@ -14,7 +12,7 @@ interface TitleWithImageProps {
 const TitleWrapper = styled.div`
   display: flex;
 
-  @media (max-width: ${({ theme }) => (theme as ITheme).sizes.screen.m}px) {
+  @media (max-width: ${({ theme }) => theme.sizes.screen.m}px) {
     display: block;
   }
 `;
@@ -31,7 +29,7 @@ const TextWrapper = styled.div`
   }
 
   h2 {
-    color: ${({ theme }) => (theme as ITheme).colors.textAccent};
+    color: ${({ theme }) => theme.colors.textAccent};
     margin-bottom: 0;
   }
 `;
@@ -39,7 +37,7 @@ const TextWrapper = styled.div`
 const ImageWrapper = styled.div`
   margin-right: 2em;
 
-  @media (max-width: ${({ theme }) => (theme as ITheme).sizes.screen.m}px) {
+  @media (max-width: ${({ theme }) => theme.sizes.screen.m}px) {
     align-content: center;
     display: flex;
     margin: 0 0 1rem 0;

@@ -1,5 +1,4 @@
-import styled from "styled-components";
-import { ITheme } from "../../../theme/theme";
+import styled, { DefaultTheme, StyledComponent } from "styled-components";
 import { ColorModifier } from "../../../types";
 import getColorModifierHexCode from "../../../utils/getColorModifierHexCode";
 interface ButtonProps {
@@ -7,7 +6,12 @@ interface ButtonProps {
 }
 
 /** @component */
-export const Button = styled.button<ButtonProps>`
+export const Button: StyledComponent<
+  "button",
+  DefaultTheme,
+  ButtonProps,
+  never
+> = styled.button<ButtonProps>`
   background: transparent;
   border: 1px solid
     ${({ theme, buttonType }) => getColorModifierHexCode(buttonType, theme)};
@@ -16,7 +20,7 @@ export const Button = styled.button<ButtonProps>`
     getColorModifierHexCode(buttonType, theme)};
   cursor: pointer;
   font-weight: 700;
-  font-family: ${({ theme }) => (theme as ITheme).font.sans};
+  font-family: ${({ theme }) => theme.font.sans};
   font-size: 1em;
   padding: 0.5em;
   margin: 0 0.5em;

@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { ITheme } from "../../../theme/theme";
 
 const Link = styled.a<{ active: boolean }>`
   color: ${({
@@ -10,7 +9,7 @@ const Link = styled.a<{ active: boolean }>`
     active,
   }) => (active ? textAccent : text)};
   border-radius: 10px;
-  font-family: ${({ theme }) => (theme as ITheme).font.sans};
+  font-family: ${({ theme }) => theme.font.sans};
   font-weight: bold;
   margin: 0 0.125em;
   padding: 1em;
@@ -19,7 +18,7 @@ const Link = styled.a<{ active: boolean }>`
   transition: 0.25s ease all;
 
   &:hover {
-    color: ${({ theme }) => (theme as ITheme).colors.textAccent};
+    color: ${({ theme }) => theme.colors.textAccent};
   }
 `;
 

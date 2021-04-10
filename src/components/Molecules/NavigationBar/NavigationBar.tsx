@@ -5,7 +5,7 @@ import { ITheme } from "../../../theme/theme";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 const Nav = styled.nav`
-  background: ${({ theme }) => (theme as ITheme).colors.background};
+  background: ${({ theme }) => theme.colors.background};
 `;
 
 const BrandContainer = styled.div`
@@ -27,7 +27,7 @@ const IconContainer = styled.div`
 `;
 
 const SideMenu = styled.div`
-  background: ${({ theme }) => (theme as ITheme).colors.background};
+  background: ${({ theme }) => theme.colors.background};
   display: flex;
   flex-direction: column;
   width: 100%;
