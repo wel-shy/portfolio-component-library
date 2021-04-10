@@ -2,9 +2,14 @@
   "name": "@wel-shy/portfolio-component-library",
   "version": "0.4.3",
   "license": "MIT",
+  "author": "wel-shy",
+  "description": "Common UI components for personal projects",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "start": "npx styleguidist server",
     "styleguide:build": "npx styleguidist build",
@@ -12,8 +17,11 @@
     "prettier": "prettier --write './src/**/*.(ts|tsx|md)'",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "postinstall": "yarn run build",
-    "build": "NODE_ENV=production tsc"
+    "build": "NODE_ENV=production tsc",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn prettier",
+    "version": "yarn prettier && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "eslintConfig": {
     "extends": [
