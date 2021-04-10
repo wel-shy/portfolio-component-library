@@ -1,4 +1,4 @@
-export interface ITheme {
+export type ITheme = {
   colors: {
     primary: string;
     info: string;
@@ -35,7 +35,7 @@ export interface ITheme {
     serif: string;
     sans: string;
   };
-}
+};
 
 const BaseTheme = {
   font: {

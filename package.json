@@ -1,29 +1,19 @@
 {
   "name": "@wel-shy/portfolio-component-library",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "license": "MIT",
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "styled-components": "^5.2.3",
-    "typescript": "^4.1.2",
-    "web-vitals": "^1.0.1"
-  },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "start": "npx styleguidist server",
-    "build": "npx styleguidist build",
+    "styleguide:build": "npx styleguidist build",
     "tslint-check": "tslint-config-prettier-check ./tslint.json",
     "prettier": "prettier --write './src/**/*.(ts|tsx|md)'",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postinstall": "yarn run build",
+    "build": "NODE_ENV=production tsc"
   },
   "eslintConfig": {
     "extends": [
@@ -43,11 +33,28 @@
       "last 1 safari version"
     ]
   },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "styled-components": "^5.2.3",
+    "typescript": "^4.1.2",
+    "web-vitals": "^1.0.1"
+  },
   "devDependencies": {
     "@types/styled-components": "^5.1.9",
     "babel-plugin-styled-components": "^1.12.0",
     "prettier": "^2.2.1",
     "react-styleguidist": "^11.1.6",
+    "ts-loader": "^8.1.0",
+    "ts-node": "^9.1.1",
     "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0"
   }
